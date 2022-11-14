@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import re
 import csv
+user = os.getenv('USER')
 def contains_domain(address, domain):
   """Returns True if the email address contains the given,domain,in the domain position, false if not."""
   domain = r'[\w\.-]+@'+domain+'$'
@@ -16,8 +17,8 @@ def replace_domain(address, old_domain, new_domain):
 def main():
   """Processes the list of emails, replacing any instances of the old domain with the new domain."""
   old_domain, new_domain = 'abc.edu', 'xyz.edu'
-  csv_file_location = '/home/kali/os/week3/data/user_emails.csv'
-  report_file = '/home/kali/os/week3/data' + '/updated_user_emails.csv'
+  csv_file_location = '/home/{}/New_Domain/data/user_emails.csv'.format(user)
+  report_file = '/home/{}/New_Domain/data'.format(user) + '/updated_user_emails.csv'
   user_email_list = []
   old_domain_email_list = []
   new_domain_email_list = []
