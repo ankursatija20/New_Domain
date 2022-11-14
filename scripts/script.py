@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import re
 import csv
+import os
 user = os.getenv('USER')
 def contains_domain(address, domain):
   """Returns True if the email address contains the given,domain,in the domain position, false if not."""
